@@ -28,7 +28,7 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
-      <Filter>Файлы ресурсов</Filter>
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

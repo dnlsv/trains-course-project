@@ -2,219 +2,219 @@
 
 void mySystem(vector<Users>& vect, vector<Train>& vectTr)
 {
-	cout << "\tLisenkov System" << endl;
-	int kod = 1, key;
-	while (kod != 0) {
-		cout << endl << "1 - Âõîä â ñèñòåìó" << endl
-			<< "0 - Âûõîä" << endl;
-		checkInt(kod);
-		switch (kod) {
-		case 1: //Âõîä â ñèñòåìó
-			entry(vect, vectTr, key);
-			break;
-		case 0: //Âûõîä
-			kod = 0;
-			break;
-		default:
-			cout << "Error!" << endl;
-		}
-	}
+    cout << "\tLisenkov System" << endl;
+    int kod = 1, key;
+    while (kod != 0) {
+        cout << endl << "1 - Ð’Ñ…Ð¾Ð´ Ð² ÑÐ¸ÑÑ‚ÐµÐ¼Ñƒ" << endl
+            << "0 - Ð’Ñ‹Ñ…Ð¾Ð´" << endl;
+        checkInt(kod);
+        switch (kod) {
+        case 1: //Ð’Ñ…Ð¾Ð´ Ð² ÑÐ¸ÑÑ‚ÐµÐ¼Ñƒ
+            entry(vect, vectTr, key);
+            break;
+        case 0: //Ð’Ñ‹Ñ…Ð¾Ð´
+            kod = 0;
+            break;
+        default:
+            cout << "Error!" << endl;
+        }
+    }
 }
 
 void entry(vector<Users>& vect, vector<Train>& vectTr, int& key)
 {
-	cout << endl << "Âîéäèòå â ñèñòåìó" << endl << endl;
-	authorization(vect, key);
-	cout << endl << "Âõîä âûïîëíåí!" << endl;
-	if (vect.at(key).role == 1)       //Ìîäóëü àäìèíèñòðàòîðà
-		moduleAdmin(vect, vectTr, key);
-	else       //Ìîäóëü ïîëüçîâàòåëÿ
-		moduleUser(vectTr);
+    cout << endl << "Ð’Ð¾Ð¹Ð´Ð¸Ñ‚Ðµ Ð² ÑÐ¸ÑÑ‚ÐµÐ¼Ñƒ" << endl << endl;
+    authorization(vect, key);
+    cout << endl << "Ð’Ñ…Ð¾Ð´ Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½!" << endl;
+    if (vect.at(key).role == 1)       //ÐœÐ¾Ð´ÑƒÐ»ÑŒ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¾Ñ€Ð°
+        moduleAdmin(vect, vectTr, key);
+    else       //ÐœÐ¾Ð´ÑƒÐ»ÑŒ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ
+        moduleUser(vectTr);
 }
 
 void moduleAdmin(vector<Users>& vect, vector<Train>& vectTr, int key)
 {
-	int kod = 1;
-	while (kod != 0) {
-		cout << endl << "\tÌîäóëü àäìèíèñòðàòîðà" << endl << endl;
-		cout << "1 - Ðàáîòà ñ ó÷åòíûìè çàïèñÿìè" << endl
-			<< "2 - Ðàáîòà ñ äàííûìè" << endl << "0 - Âåðíóòüñÿ" << endl;
-		checkInt(kod);
-		switch (kod)
-		{
-		case 1: //Ðàáîòà ñ ó÷åòíûìè çàïèñÿìè
-			workWithRecords(vect, key);
-			break;
-		case 2: //Ðàáîòà ñ äàííûìè
-			workWithData(vectTr);
-			break;
-		case 0: //Âåðíóòüñÿ
-			break;
-		default:
-			cout << "Error!" << endl;
-		}
-	}
+    int kod = 1;
+    while (kod != 0) {
+        cout << endl << "\tÐœÐ¾Ð´ÑƒÐ»ÑŒ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¾Ñ€Ð°" << endl << endl;
+        cout << "1 - Ð Ð°Ð±Ð¾Ñ‚Ð° Ñ ÑƒÑ‡ÐµÑ‚Ð½Ñ‹Ð¼Ð¸ Ð·Ð°Ð¿Ð¸ÑÑÐ¼Ð¸" << endl
+            << "2 - Ð Ð°Ð±Ð¾Ñ‚Ð° Ñ Ð´Ð°Ð½Ð½Ñ‹Ð¼Ð¸" << endl << "0 - Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ" << endl;
+        checkInt(kod);
+        switch (kod)
+        {
+        case 1: //Ð Ð°Ð±Ð¾Ñ‚Ð° Ñ ÑƒÑ‡ÐµÑ‚Ð½Ñ‹Ð¼Ð¸ Ð·Ð°Ð¿Ð¸ÑÑÐ¼Ð¸
+            workWithRecords(vect, key);
+            break;
+        case 2: //Ð Ð°Ð±Ð¾Ñ‚Ð° Ñ Ð´Ð°Ð½Ð½Ñ‹Ð¼Ð¸
+            workWithData(vectTr);
+            break;
+        case 0: //Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ
+            break;
+        default:
+            cout << "Error!" << endl;
+        }
+    }
 }
 
 void moduleUser(vector<Train>& vectTr)
 {
-	readFileTrain(vectTr);
-	int kod = 1;
-	while (kod != 0) {
-		cout << endl << "\tÌîäóëü ïîëüçîâàòåëÿ" << endl << endl;
-		cout << "1 - Ïðîñìîòð" << endl << "2 - Ïîêóïêà áèëåòà íà ðåéñ" << endl
-			<< "3 - Ïðîñìîòð ðåéñîâ â èíòåðâàëå îò a äî b" << endl
-			<< "4 - Ïîèñê" << endl << "5 - Ñîðòèðîâêà" << endl << "0 - Âåðíóòüñÿ" << endl;
-		checkInt(kod);
-		switch (kod)
-		{
-		case 1: //Ïðîñìîòð
-			showVectTrain(vectTr);
-			break;
-		case 2: //Ïîêóïêà áèëåòà íà ðåéñ
-			task(vectTr);
-			writeFileTrain(vectTr);
-			break;
-		case 3: //Ïðîñìîòð ðåéñîâ â èíòåðâàëå îò a äî b
-			trainInInterval(vectTr);
-			break;
-		case 4: //Ïîèñê
-			search(vectTr);
-			break;
-		case 5: //Ñîðòèðîâêà
-			sort(vectTr);
-			break;
-		case 0: //Âåðíóòüñÿ
-			break;
-		default:
-			cout << "Error!" << endl;
-		}
-	}
+    readFileTrain(vectTr);
+    int kod = 1;
+    while (kod != 0) {
+        cout << endl << "\tÐœÐ¾Ð´ÑƒÐ»ÑŒ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ" << endl << endl;
+        cout << "1 - ÐŸÑ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€" << endl << "2 - ÐŸÐ¾ÐºÑƒÐ¿ÐºÐ° Ð±Ð¸Ð»ÐµÑ‚Ð° Ð½Ð° Ñ€ÐµÐ¹Ñ" << endl
+            << "3 - ÐŸÑ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€ Ñ€ÐµÐ¹ÑÐ¾Ð² Ð² Ð¸Ð½Ñ‚ÐµÑ€Ð²Ð°Ð»Ðµ Ð¾Ñ‚ a Ð´Ð¾ b" << endl
+            << "4 - ÐŸÐ¾Ð¸ÑÐº" << endl << "5 - Ð¡Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ°" << endl << "0 - Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ" << endl;
+        checkInt(kod);
+        switch (kod)
+        {
+        case 1: //ÐŸÑ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€
+            showVectTrain(vectTr);
+            break;
+        case 2: //ÐŸÐ¾ÐºÑƒÐ¿ÐºÐ° Ð±Ð¸Ð»ÐµÑ‚Ð° Ð½Ð° Ñ€ÐµÐ¹Ñ
+            task(vectTr);
+            writeFileTrain(vectTr);
+            break;
+        case 3: //ÐŸÑ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€ Ñ€ÐµÐ¹ÑÐ¾Ð² Ð² Ð¸Ð½Ñ‚ÐµÑ€Ð²Ð°Ð»Ðµ Ð¾Ñ‚ a Ð´Ð¾ b
+            trainInInterval(vectTr);
+            break;
+        case 4: //ÐŸÐ¾Ð¸ÑÐº
+            search(vectTr);
+            break;
+        case 5: //Ð¡Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ°
+            sort(vectTr);
+            break;
+        case 0: //Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ
+            break;
+        default:
+            cout << "Error!" << endl;
+        }
+    }
 }
 
 void workWithRecords(vector<Users>& vect, int key)
 {
-	int kod = 1, numUs;
-	while (kod != 0) {
-		cout << endl << "\tÐàáîòà ñ ó÷åòíûìè çàïèñÿìè" << endl << endl;
-		cout << "1 - Ïðîñìîòð" << endl << "2 - Äîáàâëåíèå" << endl
-			<< "3 - Ðåäàêòèðîâàíèå" << endl << "4 - Óäàëåíèå" << endl
-			<< "0 - Âåðíóòüñÿ" << endl;
-		checkInt(kod);
-		switch (kod) {
-		case 1: //Ïðîñìîòð
-			showVector(vect);
-			break;
-		case 2: //Äîáàâëåíèå
-			addToVector(vect);
-			addFileUsers(vect.at(vect.size() - 1));
-			break;
-		case 3: //Ðåäàêòèðîâàíèå
-			showVector(vect);
-			correctVector(vect, numUs, key);
-			writeFileUsers(vect);
-			break;
-		case 4: //Óäàëåíèå
-			showVector(vect);
-			deleteVector(vect, key);
-			writeFileUsers(vect);
-			break;
-		case 0: //Âåðíóòüñÿ
-			break;
-		default:
-			cout << "Error!" << endl;
-		}
-	}
+    int kod = 1, numUs;
+    while (kod != 0) {
+        cout << endl << "\tÐ Ð°Ð±Ð¾Ñ‚Ð° Ñ ÑƒÑ‡ÐµÑ‚Ð½Ñ‹Ð¼Ð¸ Ð·Ð°Ð¿Ð¸ÑÑÐ¼Ð¸" << endl << endl;
+        cout << "1 - ÐŸÑ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€" << endl << "2 - Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ" << endl
+            << "3 - Ð ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ" << endl << "4 - Ð£Ð´Ð°Ð»ÐµÐ½Ð¸Ðµ" << endl
+            << "0 - Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ" << endl;
+        checkInt(kod);
+        switch (kod) {
+        case 1: //ÐŸÑ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€
+            showVector(vect);
+            break;
+        case 2: //Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ
+            addToVector(vect);
+            addFileUsers(vect.at(vect.size() - 1));
+            break;
+        case 3: //Ð ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ
+            showVector(vect);
+            correctVector(vect, numUs, key);
+            writeFileUsers(vect);
+            break;
+        case 4: //Ð£Ð´Ð°Ð»ÐµÐ½Ð¸Ðµ
+            showVector(vect);
+            deleteVector(vect, key);
+            writeFileUsers(vect);
+            break;
+        case 0: //Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ
+            break;
+        default:
+            cout << "Error!" << endl;
+        }
+    }
 }
 
 void workWithData(vector<Train>& vectTr)
 {
-	int kod = 1;
-	while (kod != 0) {
-		cout << endl << "\tÐàáîòà ñ äàííûìè" << endl << endl;
-		cout << "1 - Ðåæèì ðåäàêòèðîâàíèÿ" << endl
-			<< "2 - Ðåæèì îáðàáîòêè" << endl << "0 - Âåðíóòüñÿ" << endl;
-		checkInt(kod);
-		switch (kod)
-		{
-		case 1: //Ðåæèì ðåäàêòèðîâàíèÿ
-			modeEdit(vectTr);
-			break;
-		case 2: //Ðåæèì îáðàáîòêè
-			modeProcessing(vectTr);
-			break;
-		case 0: //Âåðíóòüñÿ
-			break;
-		default:
-			cout << "Error!" << endl;
-		}
-	}
+    int kod = 1;
+    while (kod != 0) {
+        cout << endl << "\tÐ Ð°Ð±Ð¾Ñ‚Ð° Ñ Ð´Ð°Ð½Ð½Ñ‹Ð¼Ð¸" << endl << endl;
+        cout << "1 - Ð ÐµÐ¶Ð¸Ð¼ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ" << endl
+            << "2 - Ð ÐµÐ¶Ð¸Ð¼ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐ¸" << endl << "0 - Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ" << endl;
+        checkInt(kod);
+        switch (kod)
+        {
+        case 1: //Ð ÐµÐ¶Ð¸Ð¼ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ
+            modeEdit(vectTr);
+            break;
+        case 2: //Ð ÐµÐ¶Ð¸Ð¼ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐ¸
+            modeProcessing(vectTr);
+            break;
+        case 0: //Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ
+            break;
+        default:
+            cout << "Error!" << endl;
+        }
+    }
 }
 
 void modeEdit(vector<Train>& vectTr)
 {
-	int kod = 1;
+    int kod = 1;
 
-	while (kod != 0) {
-		cout << endl << "\tÐåæèì ðåäàêòèðîâàíèÿ" << endl << endl;
-		cout << "1 - Ïðîñìîòð" << endl << "2 - Äîáàâëåíèå" << endl
-			<< "3 - Ðåäàêòèðîâàíèå" << endl << "4 - Óäàëåíèå" << endl
-			<< "0 - Âåðíóòüñÿ" << endl;
-		checkInt(kod);
-		switch (kod) {
-		case 1: //Ïðîñìîòð
-			showVectTrain(vectTr);
-			break;
-		case 2: //Äîáàâëåíèå
-			addToVectTrain(vectTr);
-			addFileTrain(vectTr.at(vectTr.size() - 1));
-			break;
-		case 3: //Ðåäàêòèðîâàíèå
-			showVectTrain(vectTr);
-			correctVectTrain(vectTr);
-			writeFileTrain(vectTr);
-			break;
-		case 4: //Óäàëåíèå
-			showVectTrain(vectTr);
-			deleteVectTrain(vectTr);
-			writeFileTrain(vectTr);
-			break;
-		case 0: //Âåðíóòüñÿ
-			break;
-		default:
-			cout << "Error!" << endl;
-		}
-	}
+    while (kod != 0) {
+        cout << endl << "\tÐ ÐµÐ¶Ð¸Ð¼ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ" << endl << endl;
+        cout << "1 - ÐŸÑ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€" << endl << "2 - Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ" << endl
+            << "3 - Ð ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ" << endl << "4 - Ð£Ð´Ð°Ð»ÐµÐ½Ð¸Ðµ" << endl
+            << "0 - Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ" << endl;
+        checkInt(kod);
+        switch (kod) {
+        case 1: //ÐŸÑ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€
+            showVectTrain(vectTr);
+            break;
+        case 2: //Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ
+            addToVectTrain(vectTr);
+            addFileTrain(vectTr.at(vectTr.size() - 1));
+            break;
+        case 3: //Ð ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ
+            showVectTrain(vectTr);
+            correctVectTrain(vectTr);
+            writeFileTrain(vectTr);
+            break;
+        case 4: //Ð£Ð´Ð°Ð»ÐµÐ½Ð¸Ðµ
+            showVectTrain(vectTr);
+            deleteVectTrain(vectTr);
+            writeFileTrain(vectTr);
+            break;
+        case 0: //Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ
+            break;
+        default:
+            cout << "Error!" << endl;
+        }
+    }
 }
 
 void modeProcessing(vector<Train>& vectTr)
 {
-	int kod = 1;
+    int kod = 1;
 
-	while (kod != 0) {
-		cout << endl << "\tÐåæèì îáðàáîòêè" << endl << endl;
-		cout << "1 - Ïîêóïêà áèëåòà íà ðåéñ" << endl
-			<< "2 - Ïðîñìîòð ðåéñîâ â èíòåðâàëå îò a äî b" << endl
-			<< "3 - Ïîèñê" << endl << "4 - Ñîðòèðîâêà" << endl << "0 - Âåðíóòüñÿ" << endl;
-		checkInt(kod);
-		switch (kod) {
-		case 1: //Ïîêóïêà áèëåòà íà ðåéñ
-			task(vectTr);
-			writeFileTrain(vectTr);
-			break;
-		case 2: //Ïðîñìîòð ðåéñîâ â èíòåðâàëå îò a äî b
-			trainInInterval(vectTr);
-			break;
-		case 3: //Ïîèñê
-			search(vectTr);
-			break;
-		case 4: //Ñîðòèðîâêà
-			sort(vectTr);
-			break;
-		case 0: //Âåðíóòüñÿ
-			break;
-		default:
-			cout << "Error!" << endl;
-		}
-	}
+    while (kod != 0) {
+        cout << endl << "\tÐ ÐµÐ¶Ð¸Ð¼ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐ¸" << endl << endl;
+        cout << "1 - ÐŸÐ¾ÐºÑƒÐ¿ÐºÐ° Ð±Ð¸Ð»ÐµÑ‚Ð° Ð½Ð° Ñ€ÐµÐ¹Ñ" << endl
+            << "2 - ÐŸÑ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€ Ñ€ÐµÐ¹ÑÐ¾Ð² Ð² Ð¸Ð½Ñ‚ÐµÑ€Ð²Ð°Ð»Ðµ Ð¾Ñ‚ a Ð´Ð¾ b" << endl
+            << "3 - ÐŸÐ¾Ð¸ÑÐº" << endl << "4 - Ð¡Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ°" << endl << "0 - Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ" << endl;
+        checkInt(kod);
+        switch (kod) {
+        case 1: //ÐŸÐ¾ÐºÑƒÐ¿ÐºÐ° Ð±Ð¸Ð»ÐµÑ‚Ð° Ð½Ð° Ñ€ÐµÐ¹Ñ
+            task(vectTr);
+            writeFileTrain(vectTr);
+            break;
+        case 2: //ÐŸÑ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€ Ñ€ÐµÐ¹ÑÐ¾Ð² Ð² Ð¸Ð½Ñ‚ÐµÑ€Ð²Ð°Ð»Ðµ Ð¾Ñ‚ a Ð´Ð¾ b
+            trainInInterval(vectTr);
+            break;
+        case 3: //ÐŸÐ¾Ð¸ÑÐº
+            search(vectTr);
+            break;
+        case 4: //Ð¡Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ°
+            sort(vectTr);
+            break;
+        case 0: //Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ
+            break;
+        default:
+            cout << "Error!" << endl;
+        }
+    }
 }

@@ -16,37 +16,37 @@ using namespace std;
 
 struct Users
 {
-	string login; //Логин
-	string salted_hash_password; //"Засоленный" пароль
-	string salt; //Соль
-	bool role; //Роль: администратор или пользователь
+    string login; //Р›РѕРіРёРЅ
+    string salted_hash_password; //"Р—Р°СЃРѕР»РµРЅРЅС‹Р№" РїР°СЂРѕР»СЊ
+    string salt; //РЎРѕР»СЊ
+    bool role; //Р РѕР»СЊ: Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ РёР»Рё РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ
 };
 
 struct Train
 {
-	int number; //Номер поезда
-	string point; //Пункт назначения 
-	string date; //Дата отправления
-	string timeOut; //Время отпраления
-	string timeIn; //Время прибытия
-	double val; //Стоимость одного билета 
-	int left; //Количество отсавшихся билетов
-	int sales; //Количество проданных билетов
-	int rez; //Резервное поле
+    int number; //РќРѕРјРµСЂ РїРѕРµР·РґР°
+    string point; //РџСѓРЅРєС‚ РЅР°Р·РЅР°С‡РµРЅРёСЏ 
+    string date; //Р”Р°С‚Р° РѕС‚РїСЂР°РІР»РµРЅРёСЏ
+    string timeOut; //Р’СЂРµРјСЏ РѕС‚РїСЂР°Р»РµРЅРёСЏ
+    string timeIn; //Р’СЂРµРјСЏ РїСЂРёР±С‹С‚РёСЏ
+    double val; //РЎС‚РѕРёРјРѕСЃС‚СЊ РѕРґРЅРѕРіРѕ Р±РёР»РµС‚Р° 
+    int left; //РљРѕР»РёС‡РµСЃС‚РІРѕ РѕС‚СЃР°РІС€РёС…СЃСЏ Р±РёР»РµС‚РѕРІ
+    int sales; //РљРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРѕРґР°РЅРЅС‹С… Р±РёР»РµС‚РѕРІ
+    int rez; //Р РµР·РµСЂРІРЅРѕРµ РїРѕР»Рµ
 };
 
 struct Date
 {
-	string day;
-	string month;
-	string year;
+    string day;
+    string month;
+    string year;
 };
 
 struct Time
 {
-	string hour;
-	string minute;
-	string second;
+    string hour;
+    string minute;
+    string second;
 };
 
 Date getCurrentDate();
@@ -54,82 +54,82 @@ Time getCurrentTime();
 
 void checkSystemDate(string, Date);
 
-//МЕНЮ
-void mySystem(vector<Users>&, vector<Train>&); //Начальное окно программы
-void entry(vector<Users>&, vector<Train>&, int&); //Вход в систему
-void moduleAdmin(vector<Users>&, vector<Train>&, int); //Модуль администратора
-void moduleUser(vector<Train>&); //Модуль пользователя
-void workWithRecords(vector<Users>&, int); //Работа с учетными записями
-void workWithData(vector<Train>&); //Работа с данными
-void modeEdit(vector<Train>&); //Режим редактирования
-void modeProcessing(vector<Train>&); //Режим обработки
+//РњР•РќР®
+void mySystem(vector<Users>&, vector<Train>&); //РќР°С‡Р°Р»СЊРЅРѕРµ РѕРєРЅРѕ РїСЂРѕРіСЂР°РјРјС‹
+void entry(vector<Users>&, vector<Train>&, int&); //Р’С…РѕРґ РІ СЃРёСЃС‚РµРјСѓ
+void moduleAdmin(vector<Users>&, vector<Train>&, int); //РњРѕРґСѓР»СЊ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°
+void moduleUser(vector<Train>&); //РњРѕРґСѓР»СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+void workWithRecords(vector<Users>&, int); //Р Р°Р±РѕС‚Р° СЃ СѓС‡РµС‚РЅС‹РјРё Р·Р°РїРёСЃСЏРјРё
+void workWithData(vector<Train>&); //Р Р°Р±РѕС‚Р° СЃ РґР°РЅРЅС‹РјРё
+void modeEdit(vector<Train>&); //Р РµР¶РёРј СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ
+void modeProcessing(vector<Train>&); //Р РµР¶РёРј РѕР±СЂР°Р±РѕС‚РєРё
 
-//ФУНКЦИИ ДЛЯ РАБОТЫ С УЧЕТНЫМИ ЗАПИСЯМИ ПОЛЬЗОВАТЕЛЕЙ
-void writeFileUsers(vector<Users>&); //Запись в файл пользователей
-void addFileUsers(Users); //Добавление в файл 
-void readFileUsers(vector<Users>&); //Чтение из файла 
-void generateVector(vector<Users>&); //Создание вектора пользователей
-void addToVector(vector<Users>&); //Добавление
-void showVector(vector<Users>); //Просмотр
-void correctVector(vector<Users>&, int&, int); //Редактирование
-void deleteVector(vector<Users>&, int); //Удаление
+//Р¤РЈРќРљР¦РР Р”Р›РЇ Р РђР‘РћРўР« РЎ РЈР§Р•РўРќР«РњР Р—РђРџРРЎРЇРњР РџРћР›Р¬Р—РћР’РђРўР•Р›Р•Р™
+void writeFileUsers(vector<Users>&); //Р—Р°РїРёСЃСЊ РІ С„Р°Р№Р» РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№
+void addFileUsers(Users); //Р”РѕР±Р°РІР»РµРЅРёРµ РІ С„Р°Р№Р» 
+void readFileUsers(vector<Users>&); //Р§С‚РµРЅРёРµ РёР· С„Р°Р№Р»Р° 
+void generateVector(vector<Users>&); //РЎРѕР·РґР°РЅРёРµ РІРµРєС‚РѕСЂР° РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№
+void addToVector(vector<Users>&); //Р”РѕР±Р°РІР»РµРЅРёРµ
+void showVector(vector<Users>); //РџСЂРѕСЃРјРѕС‚СЂ
+void correctVector(vector<Users>&, int&, int); //Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ
+void deleteVector(vector<Users>&, int); //РЈРґР°Р»РµРЅРёРµ
 
-void authorization(vector<Users>, int&); //Идентификация и аутентификация пользователя
-string myHash(string); //Хеширование
-string salt(); //Соль
+void authorization(vector<Users>, int&); //РРґРµРЅС‚РёС„РёРєР°С†РёСЏ Рё Р°СѓС‚РµРЅС‚РёС„РёРєР°С†РёСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+string myHash(string); //РҐРµС€РёСЂРѕРІР°РЅРёРµ
+string salt(); //РЎРѕР»СЊ
 
-//ФУНКЦИИ ДЛЯ РАБОТЫ С РЕЙСАМИ ПОЕЗДОВ
-void writeFileTrain(vector<Train>&); //Запись в файл данных
-void addFileTrain(Train); //Добавление в файл
-void readFileTrain(vector<Train>&); //Чтение из файла
-void addToVectTrain(vector<Train>&); //Добавление вектора данных
-void showVectTrain(vector<Train>); //Просмотр
-void correctVectTrain(vector<Train>&); //Редактирование
-void deleteVectTrain(vector<Train>&); //Удаление
+//Р¤РЈРќРљР¦РР Р”Р›РЇ Р РђР‘РћРўР« РЎ Р Р•Р™РЎРђРњР РџРћР•Р—Р”РћР’
+void writeFileTrain(vector<Train>&); //Р—Р°РїРёСЃСЊ РІ С„Р°Р№Р» РґР°РЅРЅС‹С…
+void addFileTrain(Train); //Р”РѕР±Р°РІР»РµРЅРёРµ РІ С„Р°Р№Р»
+void readFileTrain(vector<Train>&); //Р§С‚РµРЅРёРµ РёР· С„Р°Р№Р»Р°
+void addToVectTrain(vector<Train>&); //Р”РѕР±Р°РІР»РµРЅРёРµ РІРµРєС‚РѕСЂР° РґР°РЅРЅС‹С…
+void showVectTrain(vector<Train>); //РџСЂРѕСЃРјРѕС‚СЂ
+void correctVectTrain(vector<Train>&); //Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ
+void deleteVectTrain(vector<Train>&); //РЈРґР°Р»РµРЅРёРµ
 
-void task(vector<Train>&); //Покупка билета на рейс
-void trainInInterval(vector<Train>); //Просмотр рейсов в интервале от a до b
-void conclusionTrain(vector<Train>, string, int, int); //Просмотр рейсов в интервале от a до b
-void search(vector<Train>); //Функция поиска
-void searchForPoint(vector<Train>); //Поиск по пункту прибытия
-void searchForDate(vector<Train>); //Поиск по дате отправления
-void searchForTime(vector<Train>); //Поиск по времени отправления
-void sort(vector<Train>); //Функция сортировок
-void sortCase12(vector<Train>, vector<Train>&, int); //Сортировка по времени прибытия/отправления
-void sortCase3(vector<Train>&); //Сортировка по стоимсоти одного билета
-void swap(vector<Train>&); //Меняет местами
+void task(vector<Train>&); //РџРѕРєСѓРїРєР° Р±РёР»РµС‚Р° РЅР° СЂРµР№СЃ
+void trainInInterval(vector<Train>); //РџСЂРѕСЃРјРѕС‚СЂ СЂРµР№СЃРѕРІ РІ РёРЅС‚РµСЂРІР°Р»Рµ РѕС‚ a РґРѕ b
+void conclusionTrain(vector<Train>, string, int, int); //РџСЂРѕСЃРјРѕС‚СЂ СЂРµР№СЃРѕРІ РІ РёРЅС‚РµСЂРІР°Р»Рµ РѕС‚ a РґРѕ b
+void search(vector<Train>); //Р¤СѓРЅРєС†РёСЏ РїРѕРёСЃРєР°
+void searchForPoint(vector<Train>); //РџРѕРёСЃРє РїРѕ РїСѓРЅРєС‚Сѓ РїСЂРёР±С‹С‚РёСЏ
+void searchForDate(vector<Train>); //РџРѕРёСЃРє РїРѕ РґР°С‚Рµ РѕС‚РїСЂР°РІР»РµРЅРёСЏ
+void searchForTime(vector<Train>); //РџРѕРёСЃРє РїРѕ РІСЂРµРјРµРЅРё РѕС‚РїСЂР°РІР»РµРЅРёСЏ
+void sort(vector<Train>); //Р¤СѓРЅРєС†РёСЏ СЃРѕСЂС‚РёСЂРѕРІРѕРє
+void sortCase12(vector<Train>, vector<Train>&, int); //РЎРѕСЂС‚РёСЂРѕРІРєР° РїРѕ РІСЂРµРјРµРЅРё РїСЂРёР±С‹С‚РёСЏ/РѕС‚РїСЂР°РІР»РµРЅРёСЏ
+void sortCase3(vector<Train>&); //РЎРѕСЂС‚РёСЂРѕРІРєР° РїРѕ СЃС‚РѕРёРјСЃРѕС‚Рё РѕРґРЅРѕРіРѕ Р±РёР»РµС‚Р°
+void swap(vector<Train>&); //РњРµРЅСЏРµС‚ РјРµСЃС‚Р°РјРё
 
-//ДОПОЛНИТЕЛЬНЫЕ ФУНКЦИИ
-void checkInt(int&); //Проверка int переменных
-void checkDouble(double&); //Проверка double переменных
-void checkBool(bool&); //Проверка bool переменных
+//Р”РћРџРћР›РќРРўР•Р›Р¬РќР«Р• Р¤РЈРќРљР¦РР
+void checkInt(int&); //РџСЂРѕРІРµСЂРєР° int РїРµСЂРµРјРµРЅРЅС‹С…
+void checkDouble(double&); //РџСЂРѕРІРµСЂРєР° double РїРµСЂРµРјРµРЅРЅС‹С…
+void checkBool(bool&); //РџСЂРѕРІРµСЂРєР° bool РїРµСЂРµРјРµРЅРЅС‹С…
 
-void checkAdminRecord(vector<Users>&); //Проверка на существования хотя бы одной учетной записи
-void checkLogin(string& login, vector<Users>); //Проверка на корректность логина
-void checkUniqueness(string, vector<Users>, bool&); //Проверка на уникальность логина
-void checkRequirementsLogin(string, int&, int&); //Проверка требований логина
-void checkPassword(string&); //Проверка на корректность пароля
-void deleteOwnRecord(int&, int, int); //Удаление собственной учетной записи
-void reallyDeleteRecord(vector<Users>&, int&); //Действительно хотите удалить эту учетную запись?
-void checkWhoseCorrectRole(int&, int, bool&, int); //Кто меняте роль?
-void correctOwnRole(int&, bool); //Админ не может поменять себе роль
-void maskingPassword(string&); //Маскировка пароля
+void checkAdminRecord(vector<Users>&); //РџСЂРѕРІРµСЂРєР° РЅР° СЃСѓС‰РµСЃС‚РІРѕРІР°РЅРёСЏ С…РѕС‚СЏ Р±С‹ РѕРґРЅРѕР№ СѓС‡РµС‚РЅРѕР№ Р·Р°РїРёСЃРё
+void checkLogin(string& login, vector<Users>); //РџСЂРѕРІРµСЂРєР° РЅР° РєРѕСЂСЂРµРєС‚РЅРѕСЃС‚СЊ Р»РѕРіРёРЅР°
+void checkUniqueness(string, vector<Users>, bool&); //РџСЂРѕРІРµСЂРєР° РЅР° СѓРЅРёРєР°Р»СЊРЅРѕСЃС‚СЊ Р»РѕРіРёРЅР°
+void checkRequirementsLogin(string, int&, int&); //РџСЂРѕРІРµСЂРєР° С‚СЂРµР±РѕРІР°РЅРёР№ Р»РѕРіРёРЅР°
+void checkPassword(string&); //РџСЂРѕРІРµСЂРєР° РЅР° РєРѕСЂСЂРµРєС‚РЅРѕСЃС‚СЊ РїР°СЂРѕР»СЏ
+void deleteOwnRecord(int&, int, int); //РЈРґР°Р»РµРЅРёРµ СЃРѕР±СЃС‚РІРµРЅРЅРѕР№ СѓС‡РµС‚РЅРѕР№ Р·Р°РїРёСЃРё
+void reallyDeleteRecord(vector<Users>&, int&); //Р”РµР№СЃС‚РІРёС‚РµР»СЊРЅРѕ С…РѕС‚РёС‚Рµ СѓРґР°Р»РёС‚СЊ СЌС‚Сѓ СѓС‡РµС‚РЅСѓСЋ Р·Р°РїРёСЃСЊ?
+void checkWhoseCorrectRole(int&, int, bool&, int); //РљС‚Рѕ РјРµРЅСЏС‚Рµ СЂРѕР»СЊ?
+void correctOwnRole(int&, bool); //РђРґРјРёРЅ РЅРµ РјРѕР¶РµС‚ РїРѕРјРµРЅСЏС‚СЊ СЃРµР±Рµ СЂРѕР»СЊ
+void maskingPassword(string&); //РњР°СЃРєРёСЂРѕРІРєР° РїР°СЂРѕР»СЏ
 
-void checkPoint(string&); //Проверка на корректность пункта прибытия
-void checkDate(string&); //Проверка на корректность даты отправления
-void checkTime(string&); //Проверка на корректность времени отправления
-void checkSence(string& time); //Время отправления < Время прибытия
-void reallyDeleteTrain(vector<Train>&, int); //Действительно хотите удалить эту поездку?
-void checkNumberOfTickets(vector<Train>, int&, int); //Проверка количество оставшихся билетов
-void ckeckNotNullValue(vector<Train>&, int); // Не равно нулю
+void checkPoint(string&); //РџСЂРѕРІРµСЂРєР° РЅР° РєРѕСЂСЂРµРєС‚РЅРѕСЃС‚СЊ РїСѓРЅРєС‚Р° РїСЂРёР±С‹С‚РёСЏ
+void checkDate(string&); //РџСЂРѕРІРµСЂРєР° РЅР° РєРѕСЂСЂРµРєС‚РЅРѕСЃС‚СЊ РґР°С‚С‹ РѕС‚РїСЂР°РІР»РµРЅРёСЏ
+void checkTime(string&); //РџСЂРѕРІРµСЂРєР° РЅР° РєРѕСЂСЂРµРєС‚РЅРѕСЃС‚СЊ РІСЂРµРјРµРЅРё РѕС‚РїСЂР°РІР»РµРЅРёСЏ
+void checkSence(string& time); //Р’СЂРµРјСЏ РѕС‚РїСЂР°РІР»РµРЅРёСЏ < Р’СЂРµРјСЏ РїСЂРёР±С‹С‚РёСЏ
+void reallyDeleteTrain(vector<Train>&, int); //Р”РµР№СЃС‚РІРёС‚РµР»СЊРЅРѕ С…РѕС‚РёС‚Рµ СѓРґР°Р»РёС‚СЊ СЌС‚Сѓ РїРѕРµР·РґРєСѓ?
+void checkNumberOfTickets(vector<Train>, int&, int); //РџСЂРѕРІРµСЂРєР° РєРѕР»РёС‡РµСЃС‚РІРѕ РѕСЃС‚Р°РІС€РёС…СЃСЏ Р±РёР»РµС‚РѕРІ
+void ckeckNotNullValue(vector<Train>&, int); // РќРµ СЂР°РІРЅРѕ РЅСѓР»СЋ
 
-void fromStringToInt(string, int&); //Из string в int
-void checkLimit(int&, int); //Проверка на выход за предел (количество пользователй/поездов)
-void checkGap(string&, bool&); //Проверка на пробелы
-int getCountOfStucturesInFile(string file_path); //Вычисление количества структур в файле
+void fromStringToInt(string, int&); //РР· string РІ int
+void checkLimit(int&, int); //РџСЂРѕРІРµСЂРєР° РЅР° РІС‹С…РѕРґ Р·Р° РїСЂРµРґРµР» (РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»Р№/РїРѕРµР·РґРѕРІ)
+void checkGap(string&, bool&); //РџСЂРѕРІРµСЂРєР° РЅР° РїСЂРѕР±РµР»С‹
+int getCountOfStucturesInFile(string file_path); //Р’С‹С‡РёСЃР»РµРЅРёРµ РєРѕР»РёС‡РµСЃС‚РІР° СЃС‚СЂСѓРєС‚СѓСЂ РІ С„Р°Р№Р»Рµ
 
-const string Way = "MyFile.txt"; //Путь к файлу учетных записей
-const string WayTrain = "Train.txt"; //Путь к файлу данных
+const string Way = "..\\Resources\\MyFile.txt"; //РџСѓС‚СЊ Рє С„Р°Р№Р»Сѓ СѓС‡РµС‚РЅС‹С… Р·Р°РїРёСЃРµР№
+const string WayTrain = "..\\Resources\\Train.txt"; //РџСѓС‚СЊ Рє С„Р°Р№Р»Сѓ РґР°РЅРЅС‹С…
 
 const int LeftSolt = 15;
 const int RightSolt = 25;
